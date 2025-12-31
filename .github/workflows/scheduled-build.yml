@@ -1,0 +1,18 @@
+name: Scheduled Build
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  scheduled-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v3
+
+      - name: Print scheduled message
+        run: echo "Scheduled build completed successfully!"
+
